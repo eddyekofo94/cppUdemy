@@ -1,0 +1,57 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/main",
+      "args": [],
+      "stopAtEntry": true, // stops at main()
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "logging": {
+        "trace": true,
+        "traceResponse": true,
+        "engineLogging": true
+      }
+    },
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/mnt/c/Users/eekofo/Documents/cpp/cppUdemy/bin/main",
+      "args": ["-fThreading"],
+      "stopAtEntry": true,
+      "cwd": "/mnt/c/Users/eekofo/Documents/cpp/cppUdemy/src",
+      "environment": [],
+      "externalConsole": true,
+      "windows": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/bin/gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      "pipeTransport": {
+        "pipeCwd": "",
+        "pipeProgram": "c:\\windows\\sysnative\\bash.exe",
+        "pipeArgs": ["-c"],
+        "debuggerPath": "/usr/bin/gdb"
+      },
+      "sourceFileMap": {
+        "/mnt/c": "c:\\",
+        "/usr": "C:\\Users\\<path to WSL directory which you will place here later>"
+      },
+      "osx": {
+        "MIMode": "lldb"
+      }
+    }
+  ]
+}

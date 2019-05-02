@@ -1,0 +1,116 @@
+/* tasks.json */
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clang: Build",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-stdlib=libc++",
+        "./src/main.cpp",
+        "-o",
+        "./bin/main.out",
+        "--debug"
+      ]
+    },
+    {
+      "label": "Clang++: Build",
+      "command": "clang++",
+      "args": [
+        "-o",
+        "./src/main", // executable
+        "./src/main.cpp", // main file
+        "-g",
+        "-v"
+      ],
+      "type": "shell",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "Makefile: build",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "make run"],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Makefile: build & run",
+      "type": "shell",
+      "windows": {
+        "command": "bash"
+      },
+      "linux": {
+        "command": "bash"
+      },
+      "args": ["-c", "make run"]
+    },
+    {
+      "label": "Makefile: clean",
+      "type": "shell",
+      "windows": {
+        "command": "bash"
+      },
+      "linux": {
+        "command": "bash"
+      },
+      "args": ["-c", "make clean"]
+    },
+    {
+      "label": "wsl-cpptools: build",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "-o",
+        "/mnt/c/Users/eekofo/Documents/cpp/cppUdemy/bin/main",
+        "./src/main.cpp"
+      ],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "wsl-cpptools: build & run",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "-o",
+        "/mnt/c/Users/eekofo/Documents/cpp/cppUdemy/bin/main",
+        "./src/main.cpp",
+        "&&",
+        "./bin/main"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "wsl-cpptools: clean",
+      "type": "shell",
+      "command": "rm",
+      "args": [
+        "/mnt/c/Users/eekofo/Documents/cpp/cppUdemy/bin/main && echo \"Project cleaned!\""
+      ],
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
