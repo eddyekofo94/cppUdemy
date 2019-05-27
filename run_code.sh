@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Works only if the script id on the root folder
+# the main file as the executable.
+
 PROJECT_ROOT_DIR="${0%/*}"
 BUILD_DIR="$PROJECT_ROOT_DIR/build"
 WORKING_DIR=$(pwd)
