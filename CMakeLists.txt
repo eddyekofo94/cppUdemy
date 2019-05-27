@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.0.0...3.10.2)
 project(CppUdemy VERSION 0.1.0)
 
+set(CMAKE_CXX_STANDARD 17)
+
+
 enable_testing()
 
 add_subdirectory(src)

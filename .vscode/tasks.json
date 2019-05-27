@@ -16,6 +16,16 @@
       ]
     },
     {
+      "label": "CMake: Run",
+      "type": "shell",
+      "command": "source",
+      "args": ["${workspaceRoot}\\run_code.sh"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
       "label": "Clang++: Build",
       "command": "clang++",
       "args": [
@@ -97,10 +107,7 @@
         "&&",
         "./bin/main"
       ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+
       "problemMatcher": ["$gcc"]
     },
     {
